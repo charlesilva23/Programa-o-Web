@@ -1,27 +1,27 @@
-function extractPrice(price) {
-    return $(".product-card_price")[price].innerText;
+function extractTitle(i) {
+    return $(".product-card__title")[i].innerText;
 }
 
-function extractSize(size) {
-    return $(".promotion__tag-size")[size].innerText;
+function extractDiscount(i) {
+    return $(".promotion__tag-discount")[i].innerText;
 }
 
-function extractQuantity(quantity) {
-    return $(".promotion-quantity")[quantity].innerText;
+function extractPrice(i) {
+    return $(".promotion-price")[i].innerText;
 }
 
 var jsonObj = [{}];
 
-var cards = $(".product-card_weblink").length;
+var cards = $(".product-card__link").length;
 for (var cont = 0; cont < cards; cont++) {
+    var title = extractTitle(cont);
+    var discount = extractDiscount(cont);
     var price = extractPrice(cont);
-    var size = extrairSize(cont);
-    var quantity = extrairQuantity(cont);
 
     item = {};
-    item["Price"] = price;
-    item["size"] = size;
-    item["quantity"] = quantity;
+    item["title"] = title;
+    item["discount"] = discount;
+    item["price"] = price;
 
     //item2 = {};
     jsonObj.push(item);

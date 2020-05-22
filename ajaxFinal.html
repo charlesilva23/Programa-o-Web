@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+
+<body>
+    <button id="geradorJson" onclick="alert('Retorno Json no console')">Botão Gerador</button>
+    <script>
+
+            $("#geradorJson").click(function () {
+                $.ajax({
+                    url: "https://server-node-example.herokuapp.com/promotios-hub",
+                    dataType: "json",
+                    type: "GET",
+                }).done(function(objetos){
+                    console.log(objetos);
+                })
+            });
+
+     
+    </script>
+</body>
+</html> 
